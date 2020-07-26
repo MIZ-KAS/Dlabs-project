@@ -1,0 +1,26 @@
+body {
+  overflow-x: hidden;
+}
+
+.navbar .nav-link {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: black;
+  // padding-left: 1rem !important;
+  padding-right: 2rem !important;
+}
+
+.navbar-brand {
+  color: black;
+}
+
+.nav-item .nav-color{
+  color: white;
+  padding: 2px;
+}
+
+// .navbar .nav-item.active {
+//   border-left: #444 1px solid;
+// }
+
+
