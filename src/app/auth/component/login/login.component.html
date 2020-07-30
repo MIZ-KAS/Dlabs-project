@@ -5,27 +5,39 @@
         <h1 class="login-title">DELABS</h1>
         <h4 class="mt-4">Welcome</h4>
         <span>Enter your email and password to login</span>
-        <form action="#!">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <!-- <p>Form value: {{ f.value | json }}</p>
+          <p>Form valid: {{ f.valid }}</p> -->
           <div class="form-group">
             <label for="email" class="mt-5">Email address</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="myemail@email.com">
+            <input type="email" name="email" ngModel required #email="ngModel" class="form-control" placeholder="myemail@email.com">
+            <!-- for valication -->
+            <!-- <p>Email value: {{ email.value }}</p>
+            <p>email valid: {{ email.valid }}</p>
+            <p>email dirty: {{ email.dirty }}</p>
+            <p>email touched: {{ email.touched }}</p> -->
+
           </div>
           <div class="form-group mb-4">
             <label for="password">Password</label>
             <span class="fp"> <a [routerLink]="['/reset-password']" routerLinkActive="active"> Forger password</a></span>
             <div class="input-group mb-2">
-              <input type="password" name="password" id="password" class="form-control" placeholder="*************">
+              <input type="password" name="password" ngModel required #password="ngModel" class="form-control" placeholder="*************">
               <div class="input-group-append">
                 <div class="input-group-text px-4">Hide</div>
               </div>
             </div>
           </div>
+          <!-- <p>password value: {{ password.value }}</p>
+          <p>password valid: {{ password.valid }}</p>
+          <p>password dirty: {{ password.dirty }}</p>
+          <p>password touched: {{ password.touched }}</p> -->
           <div class="contact100-form-checkbox">
             <input class="input-checkbox" id="check-box" type="checkbox" name="remember-me">
             <label for="check-box" class="ml-2">Rememeber me</label>
           </div>
-          <div class="container-login100-form-btn">
-            <button type="button" class="btn btn-primary btn-lg btn-block">LogIn</button>
+          <div class="container-login-form-btn">
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block">LogIn</button>
 					</div>
         </form>
         <p class="login-wrapper-footer-text mt-4">Don't have an account? <a [routerLink]="['/sign-up']" routerLinkActive="active"> Sign Up</a></p>
