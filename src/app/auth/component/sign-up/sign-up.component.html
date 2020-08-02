@@ -8,27 +8,54 @@
       <div class="login-wrapper mt-1">
         <h1 class="login-title">DELABS</h1>
         <h4 class="mt-4">Get started on managing your Association</h4>
-        <form action="#!">
+        <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label for="email" class="mt-1">Association name</label>
-            <input type="text" name="text" id="text" class="form-control" placeholder="Elebi community">
+            <label for="associationName" class="mt-1">Association name</label>
+            <input type="text" class="form-control" placeholder="Elebi community" formControlName="aName" required>
+            <span *ngIf="!aName.valid && (aName.touched || userSubmitted)" class="error-block">
+              please provide Association Name
+            </span>
           </div>
+
           <div class="form-group">
-            <label for="email" >Admin Full Name</label>
-            <input type="text" name="text" id="text" class="form-control" placeholder="Johnathan Doewell">
+            <label for="Admin Name" >Admin Full Name</label>
+            <input type="text" class="form-control" placeholder="Johnathan Doewell" formControlName="afName" required>
+            <span *ngIf="!afName.valid && (afName.touched ||userSubmitted)" class="error-block">
+              please provide Full Name
+            </span>
           </div>
+
           <div class="form-group">
             <label for="email" class="mt-2">Email address</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="myemail@email.com">
+            <input type="email" class="form-control" placeholder="myemail@email.com" formControlName="email" required>
+            <span *ngIf="!email.valid && (email.touched || userSubmitted)" class="error-block">
+              <span *ngIf="email.hasError('required')">
+                Please provide email id
+              </span>
+              <span *ngIf="email.hasError('email')">
+                Please provide valid Email id
+              </span>
+            </span>
           </div>
+
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" placeholder="*************">
+            <input type="password" class="form-control" placeholder="*************" formControlName="password" required>
+            <span *ngIf="!password.valid && (password.touched || userSubmitted)" class="error-block">
+              <span *ngIf="password.errors['required']">
+                Please provide password
+              </span>
+              <span *ngIf="password.errors.minlength">
+                Please should not be lesser than 8 charac
+              </span>
+            </span>
           </div>
-          <div class="container-login100-form-btn">
-            <!-- <button class="btn btn-primary">Log in</button> -->
-            <button type="button" class="btn btn-primary btn-lg btn-block">Sign Up</button>
-					</div>
+
+          <div class="container-login-form-btn">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+          </div>
+          <!-- Form Values: {{registerationForm.value | json}} <br>
+          Form Status: {{registerationForm.valid}} -->
         </form>
         <p class="login-wrapper-footer-text">Already have an account? <a href="#!" class="text-reset"> Log in</a></p>
       </div>

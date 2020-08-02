@@ -2,25 +2,68 @@ body {
   overflow-x: hidden;
 }
 
+.header{
+  width: 100%;
+  height: 500px;
+  background-image: url(../../../../assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%; /* set to 100% for full overlay width */
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%,rgba(63, 62, 62, 0.5) 100%);
+  z-index: -1;
+}
+
 .navbar .nav-link {
   font-size: 14px;
   text-transform: uppercase;
-  color: black;
-  // padding-left: 1rem !important;
+  color: white;
   padding-right: 2rem !important;
 }
 
 .navbar-brand {
-  color: black;
+  color: white;
 }
 
-.nav-item .nav-color{
+.nav-item .nav-color {
   color: white;
   padding: 2px;
 }
 
-// .navbar .nav-item.active {
-//   border-left: #444 1px solid;
-// }
+.getStarted {
+  color: white;
+  font-size: 1rem;
+
+}
+
+a{
+  text-decoration: none;
+}
+
+.content {
+  max-width: 52%;
+  margin: 50px auto 0 auto;
+  color: white;
+  text-align: center;
+}
+
+#coloum-three{
+  background-color: #F4F4F4;
+}
+
+.mintext{
+  max-width: 52%;
+  margin: auto;
+  color: #A1A1A1;
+}
 
 
