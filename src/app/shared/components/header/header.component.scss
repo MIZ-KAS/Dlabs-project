@@ -45,6 +45,12 @@ body {
 
 }
 
+.start{
+  background-color: #FF7742;
+  border: 1px solid #FF7742;
+}
+
+
 a{
   text-decoration: none;
 }
@@ -66,4 +72,44 @@ a{
   color: #A1A1A1;
 }
 
+.card-body{
+  border-bottom: 5px solid #333CC1;
 
+}
+
+.firstcol {
+  background-color: #333CC1;
+
+  h2 {
+    color: white;
+    margin-left: 70px;
+  }
+  p {
+    color: white;
+    margin-left: 70px;
+  }
+  .btn{
+    margin-left: 70px;
+  }
+}
+
+.secondcol {
+  color: black;
+  height: 500px;
+  padding-left: 0;
+  padding-right: 0;
+  background-image: url(../../../../assets/background2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.top {
+  margin-top: 30px;
+  width: 469px;
+  font-size: 24px;
+}
+
+.top-1 {
+  margin-top: 120px;
+  font-size: 36px;
+}
